@@ -1,6 +1,6 @@
 CREATE TABLE `account` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL UNIQUE,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY ('id')
 );
@@ -11,5 +11,6 @@ CREATE TABLE `persoon` (
   `achternaam` int(11) NOT NULL,
   `gebruikersnaam` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
+  PRIMARY KEY ('id')
   FOREIGN KEY ('account_id') REFERENCES account('id')
 );
